@@ -96,6 +96,15 @@ header {
 
 .tryb i {
     float: left;
+    transition: .2s;
+}
+
+.fa-sun:hover {
+    color: rgb(255, 196, 0);
+}
+
+.fa-moon:hover {
+    color: rgb(107, 160, 221);
 }
 
 .slider {
@@ -260,6 +269,7 @@ h2 {
 
 .copy_link {
     color: rgb(255, 0, 0);
+    width: fit-content;
 }
 
 .copy_link:hover {
@@ -328,6 +338,10 @@ td {
     margin-bottom: .5rem;
 }
 
+.plus_input {
+    width: fit-content;
+}
+
 .plus_input:hover {
     color: rgb(24, 54, 134);
     cursor: pointer;
@@ -363,12 +377,12 @@ footer {
     border: none;
     background: none;
     color: inherit;
-    vertical-align: middle;
     position: relative;
     z-index: 1;
     font-family: inherit;
     font-size: 1rem;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 600;
     border: 1px solid;
@@ -383,8 +397,8 @@ footer {
 }
 
 .button--ujarak {
-    -webkit-transition: border-color 0.4s, color 0.4s;
-    transition: border-color 0.4s, color 0.4s;
+    -webkit-transition: border-color 0.5s, color 0.5s;
+    transition: border-color 0.5s, color 0.5s;
 }
 
 .button--ujarak::before {
@@ -399,8 +413,8 @@ footer {
     opacity: 0;
     -webkit-transform: scale3d(0.7, 1, 1);
     transform: scale3d(0.7, 1, 1);
-    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-    transition: transform 0.4s, opacity 0.4s;
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
@@ -420,6 +434,14 @@ footer {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+.button_red::before {
+    background: #ff0000;
+}
+
+.button_blue::before {
+    background: #0066ff;
 }
 
 @media only screen and (max-width: 768px) {

@@ -80,7 +80,7 @@ function losuj_glosowanie() {
     }
     let i = Math.floor(Math.random() * (pliki.length - 0)) + 0;
     plik = pliki[i];
-    if (localStorage.getItem(plik) == "check") {
+    if (localStorage.getItem(plik) != null) {
         xmlhttp.open("GET", "oddaj_glos.php?glos=0&q=" + plik, true);
         xmlhttp.send();
     }
@@ -242,7 +242,7 @@ function sprawdz_link() {
                 }
             }
         }
-        if (localStorage.getItem(plik) == "check") {
+        if (localStorage.getItem(plik) != null) {
             xmlhttp.open("GET", "oddaj_glos.php?glos=0&q=" + plik, true);
             xmlhttp.send();
         }
@@ -252,6 +252,44 @@ function sprawdz_link() {
         }
     }
 }
+
+function cofnij_glos() {
+    let plik = document.getElementById("plik").value;
+    let vote = localStorage.getItem(plik);
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("tresc").innerHTML = this.responseText;
+        }
+    }
+    xmlhttp.open("GET", "cofnij_glos.php?glos=" + vote + "&q=" + plik, true);
+    xmlhttp.send();
+}
+
+function odswiez_glosy() {
+    if (document.getElementById("plik") != null) {
+        let plik = document.getElementById("plik").value;
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("tresc").innerHTML = this.responseText;
+                if (localStorage.getItem("tryb") == "ciemny") {
+                    for (let i = 0; i < procent.length; i++) procent[i].classList.add("procent_dark");
+                }
+            }
+        }
+        if (localStorage.getItem(plik) != null) {
+            xmlhttp.open("GET", "oddaj_glos.php?glos=0&q=" + plik, true);
+            xmlhttp.send();
+        }
+        else {
+            xmlhttp.open("GET", "glosowanie.php?q=" + plik, true);
+            xmlhttp.send();
+        }
+    }
+}
+
+setInterval(odswiez_glosy, 10000);
 
 function dodaj_glosowanie() {
     let xmlhttp = new XMLHttpRequest();
@@ -283,7 +321,16 @@ function dodaj_glosowanie() {
     xmlhttp.send();
 }
 
-function oddaj_glos(int) {
+function oddaj_glos() {
+    plik = document.getElementById("plik").value;
+    let radio = document.getElementsByClassName("radio");
+    let vote = 0;
+    for (let i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            vote = radio[i].value;
+            break;
+        }
+    }
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -291,10 +338,9 @@ function oddaj_glos(int) {
             if (localStorage.getItem("tryb") == "ciemny") {
                 for (let i = 0; i < procent.length; i++) procent[i].classList.add("procent_dark");
             }
-            localStorage.setItem(plik, "check");
+            localStorage.setItem(plik, "" + vote);
         }
     }
-    plik = document.getElementById("plik").value;
-    xmlhttp.open("GET", "oddaj_glos.php?glos=" + int + "&q=" + plik, true);
+    xmlhttp.open("GET", "oddaj_glos.php?glos=" + vote + "&q=" + plik, true);
     xmlhttp.send();
 }
