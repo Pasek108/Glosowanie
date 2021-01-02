@@ -80,8 +80,8 @@
         </div>
         <div id="tresc">
             <p style="text-align: center;">
-                Ta strona jest poświęcona głosowaniu, możesz uczestniczyć w publicznym głosowaniu stworzonym przez innych ludzi lub
-                prywatnym po podaniu hasła.
+                Ta strona jest poświęcona głosowaniu, możesz uczestniczyć w stworzonych przez innych ludzi głosowaniach prywatnych 
+                (po podaniu hasła) lub publicznych.
                 <br>Możesz też stworzyc własne głosowanie klikając przycisk z + na górnym pasku.
                 <br><br>Kliknij losuj aby wziąć udział w losowym publicznym głosowaniu lub skorzystaj z menu po lewej.
             </p>

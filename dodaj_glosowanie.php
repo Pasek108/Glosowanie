@@ -36,26 +36,8 @@ $connection->query($zapytanie);
 
 $connection->close();
 
+$q = $plik;
+$content = file($filename);
+$array = explode("||", $content[0]);
+include("pokaz_glosowanie.php");
 ?>
-
-<h2><?php echo $naglowek ?></h2>
-<div class="priv_public">
-    <?php 
-        if ($priv == 1) echo " prywatne"; 
-        else echo " publiczne";
-    ?>
-</div>
-<br>
-<div class="copy_link" id="copy_link" onclick="copy_link()">Skopiuj link</div><br>
-<form id="ankieta" class="ankieta">
-    <div class="opcje">
-        <?php
-        for ($i = 0; $i < count($opcje_array); $i++) {
-            echo '
-            <input id="opcja' . intval($i + 1) . '" name="glos" type="radio" value="' . intval($i + 1) . '" onclick="oddaj_glos(this.value)">
-            <label class="glos" for="opcja' . intval($i + 1) . '">' . $opcje_array[$i] . '</label><br>
-            <input id="plik" type="hidden" value="' . $plik . '">';
-        }
-        ?>
-    </div>
-</form>

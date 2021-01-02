@@ -38,8 +38,8 @@ fclose($fp);
 $suma = 0;
 $pol_tablicy = (count($array) - 1) / 2;
 for ($i = 1; $i < $pol_tablicy + 1; $i++) $suma += intval($array[$i]);
-
 ?>
+
 <h2><?php echo $array[0] ?></h2>
 <div class="priv_public">
     <?php
@@ -72,6 +72,7 @@ for ($i = 1; $i < $pol_tablicy + 1; $i++) $suma += intval($array[$i]);
         ?>
     </table>
     <input id="plik" type="hidden" value="<?php echo $q; ?>">
+    <button onclick="cofnij_glos()" class="button button--ujarak button_red" type="button">Cofnij głos</button>
     <div onclick="losuj_glosowanie()" id="losuj" class="losuj">
         <i id="kostka" class="fas fa-dice-five"></i> Losuj
     </div>
