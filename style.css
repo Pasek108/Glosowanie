@@ -291,7 +291,11 @@ h2 {
 .glos {
     display: inline-block;
     height: 1.5rem;
-    padding: .5rem .5rem .5rem .5rem;
+    padding: .5rem;
+}
+
+.glos:hover {
+    cursor: pointer;
 }
 
 table {
@@ -397,8 +401,8 @@ footer {
 }
 
 .button--ujarak {
-    -webkit-transition: border-color 0.5s, color 0.5s;
-    transition: border-color 0.5s, color 0.5s;
+    -webkit-transition: border-color .5s, color .5s;
+    transition: border-color .5s, color .5s;
 }
 
 .button--ujarak::before {
@@ -413,8 +417,8 @@ footer {
     opacity: 0;
     -webkit-transform: scale3d(0.7, 1, 1);
     transform: scale3d(0.7, 1, 1);
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
+    -webkit-transition: -webkit-transform .5s, opacity .5s;
+    transition: transform .5s, opacity .5s;
     -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }

@@ -53,6 +53,7 @@ for ($i = 1; $i < $pol_tablicy + 1; $i++) $suma += intval($array[$i]);
     <table>
         <col style="width: 100%;" />
         <?php
+        if ($suma == 0) $suma = 1;
         for ($i = 1; $i < $pol_tablicy + 1; $i++) {
             $opcja = $i + $pol_tablicy;
             echo "

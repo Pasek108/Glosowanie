@@ -18,6 +18,7 @@ function zmien_tryb() {
         menu_icon.classList.remove("fa-bars_dark");
         menu_bg.classList.remove("menu_dark");
         for (let i = 0; i < procent.length; i++) procent[i].classList.remove("procent_dark");
+        if (document.getElementById("plus_input") != null) document.getElementById("plus_input").classList.remove("plus_input_dark");
         localStorage.setItem("tryb", "jasny");
     }
     else {
@@ -29,6 +30,7 @@ function zmien_tryb() {
         menu_icon.classList.add("fa-bars_dark");
         menu_bg.classList.add("menu_dark");
         for (let i = 0; i < procent.length; i++) procent[i].classList.add("procent_dark");
+        if (document.getElementById("plus_input") != null) document.getElementById("plus_input").classList.add("plus_input_dark");
         localStorage.setItem("tryb", "ciemny");
     }
 }
@@ -125,9 +127,6 @@ function sprawdz_haslo() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("tresc").innerHTML = this.responseText;
-            if (localStorage.getItem("tryb") == "ciemny") {
-                document.getElementById("plus_input").classList.add("plus_input_dark");
-            }
         }
     }
     let haslo = document.getElementById("haslo").value;
@@ -203,6 +202,27 @@ losuj.addEventListener("mouseover", zmien_kostke);
 losuj.addEventListener("mouseout", kostka_stop);
 losuj.addEventListener("click", losuj_glosowanie);
 
+let szerokosc_okna = window.innerWidth;
+function resize() {
+    if (szerokosc_okna != window.innerWidth) {
+        if (window.innerWidth <= 768) {
+            document.getElementById("pokaz_menu").style.marginLeft = "-1.5rem";
+            document.getElementById("lista").style.marginLeft = "-17.5rem";
+            margin = "-1.5rem";
+            menu_showed = 0
+        }
+        else {
+            document.getElementById("pokaz_menu").style.marginLeft = "-3rem";
+            document.getElementById("lista").style.marginLeft = "-19rem";
+            margin = "-3rem";
+            menu_showed = 0
+        }
+        szerokosc_okna = window.innerWidth;
+    }
+}
+
+setInterval(resize, 1000);
+
 let menu_showed = 0;
 function pokaz_menu() {
     if (menu_showed == 0) {
@@ -261,13 +281,14 @@ function cofnij_glos() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("tresc").innerHTML = this.responseText;
         }
+        localStorage.removeItem(plik);
     }
     xmlhttp.open("GET", "cofnij_glos.php?glos=" + vote + "&q=" + plik, true);
     xmlhttp.send();
 }
 
 function odswiez_glosy() {
-    if (document.getElementById("plik") != null) {
+    if (document.getElementById("plik") != null && document.getElementById("opcja1") == null && document.getElementById("haslo") == null) {
         let plik = document.getElementById("plik").value;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -341,6 +362,8 @@ function oddaj_glos() {
             localStorage.setItem(plik, "" + vote);
         }
     }
-    xmlhttp.open("GET", "oddaj_glos.php?glos=" + vote + "&q=" + plik, true);
-    xmlhttp.send();
+    if (vote != 0) {
+        xmlhttp.open("GET", "oddaj_glos.php?glos=" + vote + "&q=" + plik, true);
+        xmlhttp.send();
+    }
 }
