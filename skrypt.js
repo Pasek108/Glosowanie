@@ -135,7 +135,7 @@ let priv = 0;
 
 function podaj_haslo() {
     if (priv == 0) {
-        document.getElementById("prywatne").innerHTML += ' <input id="haslo" type="text" placeholder="Podaj hasło" pattern="[A-Za-z0-9\s]{0,30}"></input>';
+        document.getElementById("prywatne").innerHTML += ' <input id="haslo" type="text" placeholder="Podaj hasło" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{0,30}"></input>';
         document.getElementById("priv").checked = true;
         priv = 1;
     }
@@ -179,7 +179,7 @@ function dodaj_opcje() {
     if (opcje_input.length < 30) {
         let opcje_input_txt = [];
         for (let i = 0; i < opcje_input.length; i++) opcje_input_txt[i] = opcje_input[i].value;
-        document.getElementById("opcje_nowa").innerHTML += '<input class="opcja_input" type="text" placeholder="Opcja" pattern="[A-Za-z0-9.,?\s]{0,48}"><br>';
+        document.getElementById("opcje_nowa").innerHTML += '<input class="opcja_input" type="text" placeholder="Opcja" pattern="[A-Za-z0-9AaĄąĆćĘęŁłŃńÓóŚśŹźŻż.,?\s]{0,48}"><br>';
 
         for (let i = 0; i < opcje_input.length - 1; i++) opcje_input[i].value = opcje_input_txt[i];
     }
@@ -197,9 +197,9 @@ function skopiuj() {
 
 function copy_link() {
     let plik = document.getElementById("plik").value;
-    let url = new URL("http://localhost/Nauka/Glosowanie/php/index.php");
+    let url = new URL("http://localhost/Nauka/Glosowanie/index.php");
     url.searchParams.set('plik', plik);
-    document.getElementById("copy_link").innerHTML = "<textarea id='link' onclick='skopiuj()' cols='" + (url.length + 5) + "'>" + url + "</textarea>";
+    document.getElementById("copy_link").innerHTML = "<textarea id='link' onclick='skopiuj()' cols='72'>" + url + "</textarea>";
     document.getElementById("copy_link").onclick = "";
 }
 
@@ -207,27 +207,23 @@ if (localStorage.getItem("twoje") == null) localStorage.setItem("twoje", "");
 
 let margin;
 
-document.getElementById("logo_txt").addEventListener("click", () => {
-    window.location.replace("http://localhost/Nauka/Glosowanie/");
-});
-window.addEventListener("load", () => {
-    sprawdz_link();
-    ustaw_tryb();
-
+function aktualizuj_menu() {
     let twoje_tab = localStorage.getItem("twoje").split(";")
 
+    document.getElementById("lista_twoje").innerHTML = "<div>Utworzone przez ciebie:</div>";
     if (twoje_tab.length == 1) document.getElementById("lista_twoje").innerHTML += "<li class='menu_li'>Brak</li></a>";
     else {
         for (let i = 0; i < twoje_tab.length - 1; i++) {
             let twoje_split = twoje_tab[i].split("-");
-            let url = new URL("http://localhost/Nauka/Glosowanie/php/index.php");
+            let url = new URL("http://localhost/Nauka/Glosowanie/index.php");
             url.searchParams.set('plik', twoje_split[0]);
             document.getElementById("lista_twoje").innerHTML += "<a href='" + url + "'><li class='menu_li'>" + twoje_split[0] + "</li></a>";
         }
     }
 
+    document.getElementById("lista_public").innerHTML = "<div>Głosowania publiczne:</div>";
     for (let i = 0; i < pliki.length; i++) {
-        let url = new URL("http://localhost/Nauka/Glosowanie/php/index.php");
+        let url = new URL("http://localhost/Nauka/Glosowanie/index.php");
         url.searchParams.set('plik', pliki[i]);
         document.getElementById("lista_public").innerHTML += "<a href='" + url + "'><li class='menu_li public'>" + pliki[i] + "</li></a>";
     }
@@ -241,6 +237,17 @@ window.addEventListener("load", () => {
         document.getElementById("pokaz_menu").style.marginLeft = "-3rem";
         margin = "-3rem";
     }
+}
+
+setInterval(aktualizuj_menu, 10000);
+
+document.getElementById("logo_txt").addEventListener("click", () => {
+    window.location.replace("http://localhost/Nauka/Glosowanie/");
+});
+window.addEventListener("load", () => {
+    sprawdz_link();
+    ustaw_tryb();
+    aktualizuj_menu();
 });
 
 slider.addEventListener("click", zmien_tryb);
@@ -327,7 +334,7 @@ function sprawdz_link() {
         if (localStorage.getItem(plik) != null) {
             let url = new URL("http://localhost/Nauka/Glosowanie/php/oddaj_glos.php");
             url.searchParams.set('glos', 0);
-            url.searchParams.add('plik', plik);
+            url.searchParams.append('plik', plik);
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
@@ -365,7 +372,7 @@ function cofnij_glos() {
 
     let url = new URL("http://localhost/Nauka/Glosowanie/php/cofnij_glos.php");
     url.searchParams.set('glos', vote);
-    url.searchParams.add('plik', plik);
+    url.searchParams.append('plik', plik);
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
@@ -397,7 +404,7 @@ function odswiez_glosy() {
         if (localStorage.getItem(plik) != null) {
             let url = new URL("http://localhost/Nauka/Glosowanie/php/oddaj_glos.php");
             url.searchParams.set('glos', 0);
-            url.searchParams.add('plik', plik);
+            url.searchParams.append('plik', plik);
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
@@ -438,7 +445,7 @@ function dodaj_glosowanie() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("tresc").innerHTML = this.responseText;
-            localStorage.setItem("twoje", twoje + document.getElementById("plik").value + "-" + admin + ";");
+            localStorage.setItem("twoje", localStorage.getItem("twoje") + document.getElementById("plik").value + "-" + admin + ";");
         }
 
         if (localStorage.getItem("twoje") == null) localStorage.setItem("twoje", "");
@@ -452,6 +459,8 @@ function dodaj_glosowanie() {
                 }
             }
         }
+
+        aktualizuj_menu();
     }
 
     let url = new URL("http://localhost/Nauka/Glosowanie/php/dodaj_glosowanie.php");
@@ -488,10 +497,11 @@ function usun_glosowanie() {
             localStorage.setItem("twoje", "" + nowe);
         }
     }
+
     if (twoje_tab.length > 1) {
         let url = new URL("http://localhost/Nauka/Glosowanie/php/usun_glosowanie.php");
         url.searchParams.set('plik', plik);
-        url.searchParams.add('haslo', admin_haslo);
+        url.searchParams.append('haslo', admin_haslo);
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
     }
@@ -515,9 +525,8 @@ function oddaj_glos() {
             }
             localStorage.setItem(plik, "" + vote);
             if (localStorage.getItem("twoje") == null) localStorage.setItem("twoje", "");
-            twoje = "";
-            twoje = twoje + localStorage.getItem("twoje");
-            let twoje_tab = twoje.split(";")
+
+            let twoje_tab = localStorage.getItem("twoje").split(";")
 
             if (twoje_tab.length > 1) {
                 for (let i = 0; i < twoje_tab.length - 1; i++) {
@@ -532,7 +541,7 @@ function oddaj_glos() {
     if (vote != "0") {
         let url = new URL("http://localhost/Nauka/Glosowanie/php/oddaj_glos.php");
         url.searchParams.set('glos', vote);
-        url.searchParams.add('plik', plik);
+        url.searchParams.append('plik', plik);
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
     }
