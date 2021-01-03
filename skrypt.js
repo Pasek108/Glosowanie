@@ -496,8 +496,6 @@ function usun_glosowanie() {
             }
             localStorage.setItem("twoje", "" + nowe);
         }
-
-        aktualizuj_menu();
     }
 
     if (twoje_tab.length > 1) {
