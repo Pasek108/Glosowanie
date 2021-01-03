@@ -22,7 +22,9 @@
     <script>
         let pliki = [
             <?php
-            $connection = new mysqli("localhost", "root", "", "glosowania");
+            include("php/database.php");
+
+            $connection = new mysqli($host, $user, $password, $table);
             $zapytanie = "SELECT * FROM glosowania";
 
             $result = $connection->query($zapytanie);
@@ -68,7 +70,7 @@
 
     <main id="main">
         <i class="fas fa-bars" id="pokaz_menu" onclick="pokaz_menu()"></i>
-        <div class="menu" id="lista" style="margin-left: -19rem">
+        <div class="menu" id="lista" style="margin-left: -19.1rem">
             <ul class="lista">
                 <div id="lista_twoje" class="lista_twoje">
                     <div>Utworzone przez ciebie:</div>
@@ -80,7 +82,7 @@
         </div>
         <div id="tresc">
             <p style="text-align: center;">
-                Ta strona jest poświęcona głosowaniu, możesz uczestniczyć w stworzonych przez innych ludzi głosowaniach prywatnych 
+                Ta strona jest poświęcona głosowaniu, możesz uczestniczyć w stworzonych przez innych ludzi głosowaniach prywatnych
                 (po podaniu hasła) lub publicznych.
                 <br>Możesz też stworzyc własne głosowanie klikając przycisk z + na górnym pasku.
                 <br><br>Kliknij losuj aby wziąć udział w losowym publicznym głosowaniu lub skorzystaj z menu po lewej.
