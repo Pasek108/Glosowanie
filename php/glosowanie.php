@@ -27,7 +27,7 @@ while ($row = $result->fetch_assoc()) {
 $connection->close();
 
 if ($istnieje == 1) {
-    $filename = "glosowania/" . $plik . ".txt";
+    $filename = "../glosowania/" . $plik . ".txt";
     $file = file($filename);
     $content = explode("||", $file[0]);
 

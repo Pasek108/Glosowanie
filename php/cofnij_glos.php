@@ -22,7 +22,7 @@ while ($row = $result->fetch_assoc()) {
 
 $connection->close();
 
-$filename = "glosowania/" . $plik . ".txt";
+$filename = "../glosowania/" . $plik . ".txt";
 $file = file($filename);
 $content = explode("||", $file[0]);
 

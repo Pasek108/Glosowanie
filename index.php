@@ -21,25 +21,7 @@
 
     <script>
         let pliki = [
-            <?php
-            include("php/database.php");
-
-            $connection = new mysqli($host, $user, $password, $table);
-            $zapytanie = "SELECT * FROM glosowania";
-
-            $result = $connection->query($zapytanie);
-
-            $start = 0;
-            while ($row = $result->fetch_assoc()) {
-                if ($row["priv"] != 1) {
-                    if ($start == 0) echo '"' . $row["nazwa"] . '"';
-                    else echo ', "' . $row["nazwa"] . '"';
-                    $start++;
-                }
-            }
-
-            $connection->close();
-            ?>
+            <?php include("php/zaladuj_pliki.php"); ?>
         ];
     </script>
 </head>

@@ -23,7 +23,7 @@ $literki = "abcdefghijklmnopqrstuvwxyz0123456789";
 $plik = "";
 for ($i = 0; $i < 20; $i++) $plik = $plik . $literki[rand(0, 35)];
 
-$filename = "glosowania/" . $plik . ".txt";
+$filename = "../glosowania/" . $plik . ".txt";
 $fp = fopen($filename, "w");
 fputs($fp, $inservote);
 fclose($fp);
