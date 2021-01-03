@@ -20,7 +20,7 @@ while ($row = $result->fetch_assoc()) {
 
 if ($poprawne == 1) {
     $priv = 1;
-    $filename = "glosowania/" . $q . ".txt";
+    $filename = "../glosowania/" . $plik . ".txt";
     $file = file($filename);
     $content = explode("||", $file[0]);
     include("pokaz_glosowanie.php");

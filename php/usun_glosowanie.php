@@ -13,7 +13,7 @@ $zapytanie = "DELETE FROM glosowania WHERE nazwa='" . $plik . "' and haslo_admin
 
 if ($connection->query($zapytanie) == true) {
     echo "Głosowanie zostało usunięte.";
-    $filename = "glosowania/" . $plik . ".txt";
+    $filename = "../glosowania/" . $plik . ".txt";
     unlink($filename);
 } else echo "Błędne hasło.";
 
