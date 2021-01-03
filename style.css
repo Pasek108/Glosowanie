@@ -208,17 +208,17 @@ main {
 
 .lista_twoje div {
     padding: 1rem;
+    width: 14rem;
     background-color: rgb(255, 153, 0);
-    border: black .01rem solid;
-    border-top: none;
+    border-bottom: black .01rem solid;
     font-weight: bold;
 }
 
 .lista_public div {
     padding: 1rem;
+    width: 14rem;
     background-color: rgb(22, 115, 255);
-    border: black .01rem solid;
-    border-top: none;
+    border-bottom: black .01rem solid;
     font-weight: bold;
 }
 
@@ -233,8 +233,7 @@ main {
 }
 
 .menu_li {
-    border: black .01rem solid;
-    border-top: none;
+    border-bottom: black .01rem solid;
     padding: 1rem;
     width: 14rem;
 }
@@ -333,6 +332,7 @@ td {
     height: 1.5em;
     font-size: 1.5em;
     padding: .4rem .6rem 0 .6rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .opcja_input {
@@ -340,6 +340,44 @@ td {
     padding: .3rem .4rem .2rem .4rem;
     font-size: 1rem;
     margin-bottom: .5rem;
+    height: 1.1rem;
+}
+
+.opcja_input:focus {
+    outline: none;
+}
+
+.haslo {
+    float: left;
+    padding-left: 2.2rem;
+    width: calc(20% - 1.4rem);
+}
+
+.bledne {
+    position: absolute;
+    width: calc(100% - 6rem);
+    text-align: center;
+    margin-top: -.8rem;
+}
+
+.klucz {
+    padding: .285rem .5rem 0 .45rem;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+    color: #e9a003;
+    height: 1.1rem;
+    width: .9rem;
+    display: block;
+    float: left;
+    border-right: .01rem solid rgb(161, 161, 161);
+    margin: .2rem -2rem 0 calc(50% - ((20% + 1.15rem)/2));
+    position: relative;
+    z-index: 1;
+}
+
+.fa-key {
+    position: absolute;
+    margin: -0.21rem 0 0 -.65rem;
 }
 
 .plus_input {
@@ -462,6 +500,9 @@ footer {
     }
     .opcja_input {
         width: 50%;
+    }
+    .klucz {
+        margin-left: calc(31.2% - ((20% + 1.15rem)/2));
     }
 }
 
