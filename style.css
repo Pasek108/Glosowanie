@@ -1,519 +1,520 @@
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: whitesmoke;
-    color: rgb(255, 255, 255);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: whitesmoke;
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 header {
-    border-bottom: black solid .01rem;
-    margin-top: -.4vw;
-    background-color: rgb(93, 103, 117);
-    width: calc(100vw - 2.8rem);
-    float: left;
-    padding: 1.4rem;
-    transition: .5s;
+  border-bottom: black solid 0.01rem;
+  margin-top: -0.4vw;
+  background-color: rgb(93, 103, 117);
+  width: calc(100vw - 2.8rem);
+  float: left;
+  padding: 1.4rem;
+  transition: 0.5s;
 }
 
 .header_dark {
-    background-color: rgb(36, 39, 44);
-    transition: .5s;
+  background-color: rgb(36, 39, 44);
+  transition: 0.5s;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    float: left;
-    width: fit-content;
-    height: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  float: left;
+  width: fit-content;
+  height: 100%;
 }
 
 .logo_txt {
-    width: fit-content;
+  width: fit-content;
 }
 
 .logo_txt:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dodaj {
-    text-align: right;
-    width: fit-content;
-    height: 100%;
-    float: right;
-    margin-top: -.3rem;
+  text-align: right;
+  width: fit-content;
+  height: 100%;
+  float: right;
+  margin-top: -0.3rem;
 }
 
 .nowa {
-    float: right;
+  float: right;
 }
 
 .nowa:hover {
-    cursor: pointer;
-    color: rgb(255, 0, 0);
+  cursor: pointer;
+  color: rgb(255, 0, 0);
 }
 
 .plus {
-    font-size: 1.75rem;
-    font-weight: bold;
-    float: left;
+  font-size: 1.75rem;
+  font-weight: bold;
+  float: left;
 }
 
 .nowe {
-    font-size: 1.125rem;
-    font-weight: 600;
-    float: left;
-    padding-top: .658rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  float: left;
+  padding-top: 0.658rem;
 }
 
 .tryb {
-    width: fit-content;
-    height: 100%;
-    float: right;
-    text-align: center;
-    padding-top: .66rem;
+  width: fit-content;
+  height: 100%;
+  float: right;
+  text-align: center;
+  padding-top: 0.66rem;
 }
 
 .przelacznik {
-    padding-left: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 .tryb i {
-    float: left;
-    transition: .2s;
+  float: left;
+  transition: 0.2s;
 }
 
 .fa-sun:hover {
-    color: rgb(255, 196, 0);
+  color: rgb(255, 196, 0);
 }
 
 .fa-moon:hover {
-    color: rgb(107, 160, 221);
+  color: rgb(107, 160, 221);
 }
 
 .slider {
-    float: left;
-    width: 2.2rem;
-    height: 1rem;
-    border-radius: 1rem;
-    border: solid black 1px;
-    margin: -.06rem .4rem 0 .4rem;
-    background-color: white;
-    transition: .5s;
+  float: left;
+  width: 2.2rem;
+  height: 1rem;
+  border-radius: 1rem;
+  border: solid black 1px;
+  margin: -0.06rem 0.4rem 0 0.4rem;
+  background-color: white;
+  transition: 0.5s;
 }
 
 .slider:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .slider2 {
-    background-color: rgb(67, 80, 112);
-    transition: .5s;
+  background-color: rgb(67, 80, 112);
+  transition: 0.5s;
 }
 
 .jasny {
-    border-radius: 1rem;
-    border: solid rgb(0, 0, 0) 1px;
-    background-color: rgb(0, 0, 0);
-    height: 1rem;
-    width: calc(1rem - 1px);
-    margin-top: -1px;
-    margin-left: 0;
-    transition: .5s;
+  border-radius: 1rem;
+  border: solid rgb(0, 0, 0) 1px;
+  background-color: rgb(0, 0, 0);
+  height: 1rem;
+  width: calc(1rem - 1px);
+  margin-top: -1px;
+  margin-left: 0;
+  transition: 0.5s;
 }
 
 .ciemny {
-    margin-left: calc(100% - 1rem - 1px);
-    transition: .5s;
+  margin-left: calc(100% - 1rem - 1px);
+  transition: 0.5s;
 }
 
 main {
-    padding: 3rem;
-    padding-top: 4rem;
-    min-height: calc(100vh - 6rem - 3.5vw);
-    overflow: auto;
-    width: calc(100% - 6rem);
-    float: left;
-    background-color: whitesmoke;
-    color: black;
-    transition: .5s;
+  padding: 3rem;
+  padding-top: 4rem;
+  min-height: calc(100vh - 6rem - 3.5vw);
+  overflow: auto;
+  width: calc(100% - 6rem);
+  float: left;
+  background-color: whitesmoke;
+  color: black;
+  transition: 0.5s;
 }
 
 .main_dark {
-    background-color: rgb(68, 68, 68);
-    color: rgb(236, 236, 236);
-    transition: .5s;
+  background-color: rgb(68, 68, 68);
+  color: rgb(236, 236, 236);
+  transition: 0.5s;
 }
 
 .fa-bars {
-    font-size: 1.875rem;
-    position: absolute;
-    z-index: 2;
-    padding: .72rem .9rem .72rem .9rem;
-    background-color: rgb(255, 255, 255);
-    border: black .01rem solid;
-    border-left: none;
-    border-top: none;
-    margin: -4rem -3rem -4rem -3rem;
-    color: black;
-    transition: .5s;
+  font-size: 1.875rem;
+  position: absolute;
+  z-index: 2;
+  padding: 0.72rem 0.9rem 0.72rem 0.9rem;
+  background-color: rgb(255, 255, 255);
+  border: black 0.01rem solid;
+  border-left: none;
+  border-top: none;
+  margin: -4rem -3rem -4rem -3rem;
+  color: black;
+  transition: 0.5s;
 }
 
 .fa-bars:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .fa-bars_dark {
-    background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204);
 }
 
 .menu {
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    width: 16rem;
-    margin: -4rem 0 -4rem 0;
-    border: black .01rem solid;
-    border-top: none;
-    z-index: 2;
-    transition: .5s;
-    overflow-y: scroll;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 16rem;
+  margin: -4rem 0 -4rem 0;
+  border: black 0.01rem solid;
+  border-top: none;
+  z-index: 2;
+  transition: 0.5s;
+  overflow-y: scroll;
 }
 
 .menu_dark {
-    background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204);
 }
 
 .lista {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .lista_twoje div {
-    padding: 1rem;
-    width: 14rem;
-    background-color: rgb(255, 153, 0);
-    border-bottom: black .01rem solid;
-    font-weight: bold;
+  padding: 1rem;
+  width: 14rem;
+  background-color: rgb(255, 153, 0);
+  border-bottom: black 0.01rem solid;
+  font-weight: bold;
 }
 
 .lista_public div {
-    padding: 1rem;
-    width: 14rem;
-    background-color: rgb(22, 115, 255);
-    border-bottom: black .01rem solid;
-    font-weight: bold;
+  padding: 1rem;
+  width: 14rem;
+  background-color: rgb(22, 115, 255);
+  border-bottom: black 0.01rem solid;
+  font-weight: bold;
 }
 
 .menu a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 .menu a:hover {
-    color: rgb(0, 0, 0);
-    text-decoration: underline;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
 }
 
 .menu_li {
-    border-bottom: black .01rem solid;
-    padding: 1rem;
-    width: 14rem;
+  border-bottom: black 0.01rem solid;
+  padding: 1rem;
+  width: 14rem;
 }
 
 .losuj {
-    font-size: 1.875rem;
-    text-align: center;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
+  font-size: 1.875rem;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
 }
 
 .losuj:hover {
-    color: rgb(255, 0, 0);
-    cursor: pointer;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
 }
 
 .podaj_haslo {
-    text-align: center;
-    padding-top: 5vh;
+  text-align: center;
+  padding-top: 5vh;
 }
 
 h2 {
-    width: fit-content;
-    display: inline;
+  width: fit-content;
+  display: inline;
 }
 
 .priv_public {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .copy_link {
-    color: rgb(255, 0, 0);
-    width: fit-content;
+  color: rgb(255, 0, 0);
+  width: fit-content;
 }
 
 .copy_link:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .copy_link textarea {
-    height: 1rem;
+  height: 1rem;
 }
 
 .opcje {
-    padding-top: .3rem;
+  padding-top: 0.3rem;
 }
 
 .check:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .glos {
-    display: inline-block;
-    height: 1.5rem;
-    padding: .5rem;
+  display: inline-block;
+  height: 1.5rem;
+  padding: 0.5rem;
 }
 
 .glos:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 table {
-    width: calc(100vw - 6rem);
-    table-layout: fixed;
+  width: calc(100vw - 6rem);
+  table-layout: fixed;
 }
 
 td {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .procent {
-    background-color: rgb(24, 110, 190);
-    height: 1.5rem;
-    color: #d8d8d8;
-    font-weight: bold;
-    transition: .5s;
-    padding: .5rem 0 .5rem 0;
-    white-space: nowrap;
-    text-align: right;
+  background-color: rgb(24, 110, 190);
+  height: 1.5rem;
+  color: #d8d8d8;
+  font-weight: bold;
+  transition: 0.5s;
+  padding: 0.5rem 0 0.5rem 0;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .procent_txt {
-    margin: 0 .5rem 0 .5rem;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 .procent_dark {
-    background-color: rgb(204, 99, 14);
-    color: black;
-    transition: .5s;
+  background-color: rgb(204, 99, 14);
+  color: black;
+  transition: 0.5s;
 }
 
 .naglowek_input {
-    width: 98%;
-    height: 1.5em;
-    font-size: 1.5em;
-    padding: .4rem .6rem 0 .6rem;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 98%;
+  height: 1.5em;
+  font-size: 1.5em;
+  padding: 0.4rem 0.6rem 0 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .opcja_input {
-    width: 20%;
-    padding: .3rem .4rem .2rem .4rem;
-    font-size: 1rem;
-    margin-bottom: .5rem;
-    height: 1.1rem;
+  width: 20%;
+  padding: 0.3rem 0.4rem 0.2rem 0.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  height: 1.1rem;
 }
 
 .opcja_input:focus {
-    outline: none;
+  outline: none;
 }
 
 .haslo {
-    float: left;
-    padding-left: 2.2rem;
-    width: calc(20% - 1.4rem);
+  float: left;
+  padding-left: 2.2rem;
+  width: calc(20% - 1.4rem);
 }
 
 .bledne {
-    position: absolute;
-    width: calc(100% - 6rem);
-    text-align: center;
-    margin-top: -.8rem;
+  position: absolute;
+  width: calc(100% - 6rem);
+  text-align: center;
+  margin-top: -0.8rem;
 }
 
 .klucz {
-    padding: .285rem .5rem 0 .45rem;
-    background-color: rgb(255, 255, 255);
-    font-size: 1.3rem;
-    color: #e9a003;
-    height: 1.1rem;
-    width: .9rem;
-    display: block;
-    float: left;
-    border-right: .01rem solid rgb(161, 161, 161);
-    margin: .2rem -2rem 0 calc(50% - ((20% + 1.15rem)/2));
-    position: relative;
-    z-index: 1;
+  padding: 0.285rem 0.5rem 0 0.45rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  color: #e9a003;
+  height: 1.1rem;
+  width: 0.9rem;
+  display: block;
+  float: left;
+  border-right: 0.01rem solid rgb(161, 161, 161);
+  margin: 0.2rem -2rem 0 calc(50% - ((20% + 1.15rem) / 2));
+  position: relative;
+  z-index: 1;
 }
 
 .fa-key {
-    position: absolute;
-    margin: -0.21rem 0 0 -.65rem;
+  position: absolute;
+  margin: -0.21rem 0 0 -0.65rem;
 }
 
 .plus_input {
-    width: fit-content;
+  width: fit-content;
 }
 
 .plus_input:hover {
-    color: rgb(24, 54, 134);
-    cursor: pointer;
+  color: rgb(24, 54, 134);
+  cursor: pointer;
 }
 
 .plus_input_dark:hover {
-    color: rgb(255, 208, 0);
-    cursor: pointer;
+  color: rgb(255, 208, 0);
+  cursor: pointer;
 }
 
 footer {
-    background-color: rgb(50, 55, 61);
-    color: white;
-    width: calc(100vw - 2.8rem);
-    float: left;
-    padding: 1.4rem;
-    text-align: center;
-    transition: .5s;
+  background-color: rgb(50, 55, 61);
+  color: white;
+  width: calc(100vw - 2.8rem);
+  float: left;
+  padding: 1.4rem;
+  text-align: center;
+  transition: 0.5s;
 }
 
 .footer_dark {
-    background-color: rgb(15, 17, 19);
-    transition: .5s;
+  background-color: rgb(15, 17, 19);
+  transition: 0.5s;
 }
 
 .button {
-    float: left;
-    min-width: 150px;
-    max-width: 250px;
-    display: block;
-    margin-top: 1.2em;
-    padding: .5em 1em;
-    border: none;
-    background: none;
-    color: inherit;
-    position: relative;
-    z-index: 1;
-    font-family: inherit;
-    font-size: 1rem;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 600;
-    border: 1px solid;
+  float: left;
+  min-width: 150px;
+  max-width: 250px;
+  display: block;
+  margin-top: 1.2em;
+  padding: 0.5em 1em;
+  border: none;
+  background: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  border: 1px solid;
 }
 
 .button:focus {
-    outline: none;
+  outline: none;
 }
 
-.button>span {
-    vertical-align: middle;
+.button > span {
+  vertical-align: middle;
 }
 
 .button--ujarak {
-    -webkit-transition: border-color .5s, color .5s;
-    transition: border-color .5s, color .5s;
+  -webkit-transition: border-color 0.5s, color 0.5s;
+  transition: border-color 0.5s, color 0.5s;
 }
 
 .button--ujarak::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #189b07;
-    z-index: -1;
-    opacity: 0;
-    -webkit-transform: scale3d(0.7, 1, 1);
-    transform: scale3d(0.7, 1, 1);
-    -webkit-transition: -webkit-transform .5s, opacity .5s;
-    transition: transform .5s, opacity .5s;
-    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #189b07;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale3d(0.7, 1, 1);
+  transform: scale3d(0.7, 1, 1);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.button--ujarak, .button--ujarak::before {
-    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+.button--ujarak,
+.button--ujarak::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .button--ujarak:hover {
-    color: #fff;
-    border-color: #37474f;
-    cursor: pointer;
+  color: #fff;
+  border-color: #37474f;
+  cursor: pointer;
 }
 
 .button--ujarak:hover::before {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .button_red::before {
-    background: #ff0000;
+  background: #ff0000;
 }
 
 .button_blue::before {
-    background: #0066ff;
+  background: #0066ff;
 }
 
 @media only screen and (max-width: 768px) {
-    .nowe {
-        display: none;
-    }
-    main {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        width: calc(100% - 3rem);
-    }
-    table {
-        width: calc(100vw - 3rem);
-    }
-    .opcja_input {
-        width: 50%;
-    }
-    .klucz {
-        margin-left: calc(31.2% - ((20% + 1.15rem)/2));
-    }
+  .nowe {
+    display: none;
+  }
+  main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+  table {
+    width: calc(100vw - 3rem);
+  }
+  .opcja_input {
+    width: 50%;
+  }
+  .klucz {
+    margin-left: calc(31.2% - ((20% + 1.15rem) / 2));
+  }
 }
 
 @media only screen and (min-width: 1600px) {
-    html {
-        font-size: 20px;
-    }
+  html {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (min-width: 1900px) {
-    html {
-        font-size: 24px;
-    }
+  html {
+    font-size: 24px;
+  }
 }

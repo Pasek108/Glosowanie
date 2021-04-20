@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-
+ 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.min.js"></script>
     <![endif]-->
 
     <script>
         let pliki = [
-            <?php include("php/zaladuj_pliki.php"); ?>
+            <?php include "php/zaladuj_pliki.php";?>
         ];
     </script>
 </head>
